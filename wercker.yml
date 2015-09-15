@@ -18,7 +18,9 @@ box: debian
 build:
   # The steps that will be executed on build
   steps:
-    - script: |-
+    - script: 
+    name: TaskHandler
+        code: |-
   # Install Java7
   sudo apt-get update
   sudo apt-get install python-software-properties curl wget -y
