@@ -26,11 +26,4 @@ build:
             ls -lart TaskHandler
             tar -cvf TaskHandler.jar TaskHandler
             ls -lart
-deploy:
-    steps:
-        - github-create-release:
-            token: $GITHUB_TOKEN
-            tag: v1.0.0
-        - github-upload-asset:
-            token: $GITHUB_TOKEN
-            file: TaskHandler.jar
+            curl --data '{"tag_name": "v1.0.0","target_commitish": "master","name": "v1.0.0","body": "Release of version 1.0.0","draft": false,"prerelease": false}' https://api.github.com/repos/gardenguava/buildtest/releases?access_token=667c859a82a44311489ff839a4e6dd438c653225
