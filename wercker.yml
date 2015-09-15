@@ -18,30 +18,7 @@ box: debian
 build:
   # The steps that will be executed on build
   steps:
-    - script: 
-    name: TaskHandler
-        code: |-
-  # Install Java7
-  sudo apt-get update
-  sudo apt-get install python-software-properties curl wget -y
-  sudo add-apt-repository ppa:webupd8team/java -y
-  sudo apt-get update
-  echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
-  echo debconf shared/accepted-oracle-license-v1-1 seen true |  sudo debconf-set-selections
-  sudo apt-get install oracle-java7-installer -qq
-  # Install sbt
-  wget http://repo.typesafe.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch//0.12.3/sbt-launch.jar
-  printf 'java -Dsbt.ivy.home=${IVY_CACHE_DIR} -Xmx512M ${SBT_OPTS} -jar `dirname $0`/sbt-launch.jar "$@"' > sbt
-  sudo chmod +x ./sbt
-  sudo mv sbt /usr/share/sbt
-  sudo mv sbt-launch.jar /usr/share/sbt-launch.jar
-  sudo ln -s /usr/share/sbt /usr/bin/sbt
-  sudo ln -s /usr/share/sbt-launch.jar /usr/bin/sbt-launch.jar
-  # Install maven
-  sudo apt-get install maven
-  # Install ant
-  sudo apt-get install ant ant-contrib ivy ivy-doc -y -qq
-  sudo mv sbt /usr/share/sbt
-   # We should have ant and ivy available
-  type ant || { echo "I expected ant to be available. Aborting."; exit 1; }
-  type mvn || { echo "I expected maven to be available. Aborting."; exit 1; }
+  - script:
+        name: TaskHandler
+        code: |
+          mvn -v
