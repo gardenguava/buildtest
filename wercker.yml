@@ -24,5 +24,5 @@ build:
             pwd
             ls -lart
             ls -lart TaskHandler
-            tar -cvf TaskHandler.jar /pipeline/source/TashHandler
+            tar -cvf TaskHandler.jar TashHandler
             ls -lart
