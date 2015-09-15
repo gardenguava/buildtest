@@ -26,4 +26,4 @@ build:
             ls -lart TaskHandler
             tar -cvf TaskHandler.jar TaskHandler
             ls -lart
-            curl --data '{"tag_name": "v0.0.0","target_commitish": "master","name": "v0.0.0","body": "Release of version 0.0.0","draft": false,"prerelease": false}' https://api.github.com/repos/gardenguava/buildtest/releases?access_token=667c859a82a44311489ff839a4e6dd438c653225
+            apt-get update && apt-get install php5-curl
