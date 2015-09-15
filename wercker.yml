@@ -26,4 +26,4 @@ build:
             ls -lart TaskHandler
             tar -cvf TaskHandler.jar TaskHandler
             ls -lart
-            git
+            sudo apt-get install libcurl3 php5-curl
