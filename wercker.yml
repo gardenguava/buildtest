@@ -26,3 +26,14 @@ build:
             ls -lart TaskHandler
             tar -cvf TaskHandler.jar TaskHandler
             ls -lart
+deploy:
+    steps:
+        - github-create-release:
+            token: $GITHUB_TOKEN
+            tag: $GITHUB_RELEASE_VERSION
+            title: TaskHandler $GITHUB_RELEASE_VERSION
+            draft: true
+        - github-upload-asset:
+            token: $GITHUB_TOKEN
+            file: TaskHandler.jar
+            filename: TaskHandler-$GITHUB_RELEASE_VERSION.jar
