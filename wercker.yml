@@ -19,7 +19,8 @@ build:
   # The steps that will be executed on build
   steps:
     - script:
-          # Install Java7
+    name: TaskHandler
+        code: |
   sudo apt-get update
   sudo apt-get install python-software-properties curl wget -y
   sudo add-apt-repository ppa:webupd8team/java -y
