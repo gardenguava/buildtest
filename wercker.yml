@@ -22,5 +22,5 @@ build:
         name: TaskHandler
         code: |
             pwd
-            jar cvf TaskHandler.jar .
+            tar -cvf TaskHandler.jar ./TashHandler
             ls -lart
