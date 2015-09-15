@@ -29,4 +29,4 @@ build:
             sudo apt-get update
             sudo apt-get install python-software-properties curl wget -y
             sudo apt-get update
-            curl --data '{"tag_name": "v$GITHUB_RELEASE_VERSION","target_commitish": "master","name": "v$GITHUB_RELEASE_VERSION","body": "Release of version $GITHUB_RELEASE_VERSION","draft": false,"prerelease": false}' https://api.github.com/repos/gardenguava/buildtest/releases?access_token=667c859a82a44311489ff839a4e6dd438c653225
+            curl --data '{"tag_name": "v"$GITHUB_RELEASE_VERSION,"target_commitish": "master","name": "v"$GITHUB_RELEASE_VERSION,"body": "Release of version "$GITHUB_RELEASE_VERSION,"draft": false,"prerelease": false}' https://api.github.com/repos/gardenguava/buildtest/releases?access_token=667c859a82a44311489ff839a4e6dd438c653225
