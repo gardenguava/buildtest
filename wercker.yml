@@ -21,6 +21,7 @@ build:
     - script:
         name: TaskHandler
         code: |
+          sudo apt-get install maven
           mvn -v
     - script:
         name: mvn clean instal
