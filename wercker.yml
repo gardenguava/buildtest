@@ -34,3 +34,5 @@ deploy:
         - github-upload-asset:
             token: $GITHUB_TOKEN
             file: TaskHandler.jar
+            steps:
+        - wercker/github-upload-asset@1.0.1
