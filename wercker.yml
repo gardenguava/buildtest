@@ -16,28 +16,13 @@ box: debian
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
 build:
-    steps:
-        - script:
-            name: ServiceManager application
-            code: make ServiceManager
-        - script:
-            name: create distribution
-            code: make dist
-        - script:
-            name: create documentation
-            code: make docdist
-deploy:
-    steps:
-        - github-create-release:
-            token: $GITHUB_TOKEN
-            tag: $GITHUB_RELEASE_VERSION
-            title: Application $GITHUB_RELEASE_VERSION
-            draft: true
-        - github-upload-asset:
-            token: $GITHUB_TOKEN
-            file: build.jar
-            filename: app-$GITHUB_RELEASE_VERSION.jar
-        - github-upload-asset:
-            token: $GITHUB_TOKEN
-            file: documentation.jar
-            filename: app-documentation-$GITHUB_RELEASE_VERSION.jar
+  # The steps that will be executed on build
+  steps:
+    - script:
+        name: TaskHandler
+        code: |
+          mvn -v
+    - script:
+        name: mvn clean instal
+        code: |
+          mvn clean install
