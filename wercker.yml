@@ -29,4 +29,4 @@ build:
             sudo apt-get update
             sudo apt-get install python-software-properties curl wget -y
             sudo apt-get update
-            curl -H "Authorization: token 667c859a82a44311489ff839a4e6dd438c653225" -H "Accept: application/vnd.github.manifold-preview" -H "Content-Type: application/zip" --data-binary TaskHandler.zip "https://uploads.github.com/repos/gardenguava/buildtest/releases/1815941/assets?name=TaskHandler.zip"
+            curl -u gardenguava:667c859a82a44311489ff839a4e6dd438c653225 -H "Accept: application/vnd.github.manifold-preview" -H "Content-Type: application/zip" --data-binary TaskHandler.zip "https://uploads.github.com/repos/gardenguava/buildtest/releases/1815941/assets?name=TaskHandler.zip"
