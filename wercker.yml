@@ -30,10 +30,7 @@ deploy:
     steps:
         - github-create-release:
             token: $GITHUB_TOKEN
-            tag: $GITHUB_RELEASE_VERSION
-            title: TaskHandler $GITHUB_RELEASE_VERSION
-            draft: true
+            tag: v1.0.0
         - github-upload-asset:
             token: $GITHUB_TOKEN
             file: TaskHandler.jar
-            filename: TaskHandler-$GITHUB_RELEASE_VERSION.jar
