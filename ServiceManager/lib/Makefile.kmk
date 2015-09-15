@@ -1,3 +1,0 @@
-include $(PATH_ROOT)/lib/s16/Makefile.kmk
-include $(PATH_ROOT)/lib/s16db/Makefile.kmk
-include $(PATH_ROOT)/lib/s16rr/Makefile.kmk
