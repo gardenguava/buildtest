@@ -16,16 +16,14 @@ box: debian
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
 build:
-    steps:
-        - script:
-            name: test application
-            code: make test
-        - script:
-            name: create distribution
-            code: make dist
-        - script:
-            name: create documentation
-            code: make docdist
+    # Steps make up the actions in your pipeline
+    # Read more about steps on our dev center:
+    # http://devcenter.wercker.com/docs/steps/index.html
+  steps:
+    - script:
+        name: echo
+        code: |
+          echo "hello world!"
 deploy:
     steps:
         - github-create-release:
@@ -40,4 +38,4 @@ deploy:
         - github-upload-asset:
             token: $GITHUB_TOKEN
             file: documentation.jar
-            filename: app-documentation-$GITHUB_RELEASE_VERSION.jar 
+            filename: app-documentation-$GITHUB_RELEASE_VERSION.jar
