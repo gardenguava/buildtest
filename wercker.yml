@@ -16,14 +16,16 @@ box: debian
 # Read more about pipelines on our dev center
 # http://devcenter.wercker.com/docs/pipelines/index.html
 build:
-    # Steps make up the actions in your pipeline
-    # Read more about steps on our dev center:
-    # http://devcenter.wercker.com/docs/steps/index.html
-  steps:
-    - script:
-        name: echo
-        code: |
-          echo "hello world!"
+    steps:
+        - script:
+            name: ServiceManager application
+            code: make ServiceManager
+        - script:
+            name: create distribution
+            code: make dist
+        - script:
+            name: create documentation
+            code: make docdist
 deploy:
     steps:
         - github-create-release:
