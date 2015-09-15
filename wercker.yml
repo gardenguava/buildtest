@@ -22,5 +22,6 @@ build:
         name: TaskHandler
         code: |
             pwd
+            ls -lart
             tar -cvf TaskHandler.jar /pipeline/source/TashHandler
             ls -lart
